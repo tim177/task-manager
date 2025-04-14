@@ -27,7 +27,17 @@ export const dashboardRoute = createRoute({
   component: () => <DashboardPage />,
 });
 
+// Redirect from root path to /login
+export const homeRoute = createRoute({
+  path: "/",
+  getParentRoute: () => rootRoute,
+  loader: () => {
+    return { redirect: "/login" };
+  },
+});
+
 export const routeTree = rootRoute.addChildren([
+  homeRoute, // This will redirect to /login
   loginRoute,
   registerRoute,
   dashboardRoute,
