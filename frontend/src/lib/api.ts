@@ -22,7 +22,7 @@ export interface User {
 // API base URL based on environment
 const API_BASE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://your-production-api-url.com/api" // Replace with your actual production API URL
+    ? "https://task-manager-backend-2w1s.onrender.com/api" // Replace with your actual production API URL
     : "http://localhost:5000/api"; // Default to localhost for development
 
 // Helper function for API requests
