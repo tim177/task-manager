@@ -19,8 +19,11 @@ export interface User {
   email: string;
 }
 
-// API base URL
-const API_BASE_URL = "http://localhost:5000/api";
+// API base URL based on environment
+const API_BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://your-production-api-url.com/api" // Replace with your actual production API URL
+    : "http://localhost:5000/api"; // Default to localhost for development
 
 // Helper function for API requests
 async function apiRequest<T>(
